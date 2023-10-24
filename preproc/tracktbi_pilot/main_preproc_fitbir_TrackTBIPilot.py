@@ -41,11 +41,11 @@ def reg_bsebfc(studydir, subid):
         return
 
     if os.path.isfile(t1) and not os.path.isfile(t1bse):
-        os.system('/home/ajoshi/BrainSuite18a/bin/bse -i ' + t1 + ' -o ' +
+        os.system('/home/ajoshi/BrainSuite23a/bin/bse -i ' + t1 + ' -o ' +
                   t1bse + ' --auto --trim -p')
         #        os.system('bet ' + t1 + ' ' + t1bse + ' -f 0.3')
 
-        os.system('/home/ajoshi/BrainSuite18a/bin/bfc -i ' + t1bse + ' -o ' +
+        os.system('/home/ajoshi/BrainSuite23a/bin/bfc -i ' + t1bse + ' -o ' +
                   t1[:-7] + 'r.nii.gz')
 
     t1r = t1[:-7] + 'r.nii.gz'
