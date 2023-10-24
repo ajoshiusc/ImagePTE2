@@ -1,5 +1,5 @@
-#||AUM||
-#||Shree Ganeshaya Namaha||
+# ||AUM||
+# ||Shree Ganeshaya Namaha||
 
 import pandas as pd
 import glob
@@ -18,10 +18,7 @@ def regparfun(subdir, infile):
     modname = name2modality(infile)
     if modname is not None:
         outfname = os.path.join(subdir, modname)
-    else:
-        outfname = ''
-
-    copyfile(infile, outfname + '.nii.gz')
+        copyfile(infile, outfname + '.nii.gz')
 
 
 def reg_bsebfc(studydir, subid):
@@ -64,7 +61,7 @@ def reg_bsebfc(studydir, subid):
 
 
 def main():
-    #Set subject dirs
+    # Set subject dirs
     study_name = 'tracktbi_pilot'
     med_hist_csv = '/ImagePTE2/ajoshi/data/tracktbi_pilot/Baseline Med History_246/TrackTBI_MedicalHx.csv'
     study_dir = '/ImagePTE2/ajoshi/data/tracktbi_pilot/TRACK TBI Pilot - MR data -'
@@ -93,7 +90,7 @@ def main():
 
     for subid in subIds.index:
         print(subid)
-  
+
         if isinstance(subid, numbers.Number):
             continue
 
@@ -143,6 +140,7 @@ def main():
 
     pool.close()
     pool.join()
+
 
 if __name__ == "__main__":
     main()
