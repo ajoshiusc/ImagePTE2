@@ -5,9 +5,15 @@ from nipype.interfaces.dcm2nii import Dcm2niix
 import shutil
 import glob
 import os
-
+import nibabel as nib
+import numpy as np
 
 def name2modality(fname=''):
+
+    if np.min(nib.load(fname).shape) < 20:
+        print('File too small: ' + fname)
+        return
+
     fname = fname.lower()
 
     if ('flair' in fname) and ('t1_' not in fname):
